@@ -61,7 +61,7 @@ struct ContentView: View {
 
 ```
 brew install create-dmg
-mkdir ~/build
+mkdir ~/build-dmg
 cp -R ~/Library/Developer/Xcode/DerivedData/HelloWorld-hkuitqttajolmkaalqkyqvioufcf/Build/Products/Debug/HelloWorld.app/ ~/build/HelloWorld.app
 curl -o ~/build/app-icon.icns https://raw.githubusercontent.com/borgbase/vorta/main/src/vorta/assets/icons/app-icon.icns
 curl -o ~/build/background.png https://raw.githubusercontent.com/create-dmg/create-dmg/master/examples/01-main-example/installer_background.png
@@ -70,16 +70,16 @@ curl -o ~/build/background.png https://raw.githubusercontent.com/create-dmg/crea
 ```
 create-dmg \
   --volname "HelloWorld Installer" \
-  --volicon ~/build/app-icon.icns \
-  --background ~/build/background.png \
+  --volicon ~/build-dmg/app-icon.icns \
+  --background ~/build-dmg/background.png \
   --window-pos 200 120 \
   --window-size 800 400 \
   --icon-size 100 \
   --icon "HelloWorldApp.app" 200 190 \
   --app-drop-link 600 185 \
   --hide-extension "HelloWorld.app" \
-  ~/build/HelloWorld.dmg \
-  ~/build/HelloWorld.app
+  ~/build-dmg/HelloWorld.dmg \
+  ~/build-dmg/HelloWorld.app
 ```
 
 ## Step 6: Distribution

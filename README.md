@@ -45,19 +45,19 @@ struct ContentView: View {
 
 ## Step 4: Package as a .app Bundle
 
-* Xcode's compilation process automatically generates a .app bundle, which is a self-contained macOS application package.
-* Build the Project: Go to Product > Build (or press Command + B). This action compiles the code without running the app.
-* Locate the .app:
-* In the Xcode sidebar, expand the Products folder (located under the project navigator).
-* Right-click on HelloWorld.app and select Show in Finder. This will open the build directory (typically ~/Library/Developer/Xcode/DerivedData/HelloWorldApp-.../Build/Products/Debug/).
-* Your HelloWorld.app file is located there. You can double-click it in Finder to run it independently of Xcode.
+ * Xcode's compilation process automatically generates a .app bundle, which is a self-contained macOS application package.
+ * Build the Project: Go to Product > Build (or press Command + B). This action compiles the code without running the app.
+ * Locate the .app:
+ * In the Xcode sidebar, expand the Products folder (located under the project navigator).
+ * Right-click on HelloWorld.app and select Show in Finder. This will open the build directory (typically ~/Library/Developer/Xcode/DerivedData/HelloWorldApp-.../Build/Products/Debug/).
+ * Your HelloWorld.app file is located there. You can double-click it in Finder to run it independently of Xcode.
 
 
-## Step 5: Distribution
+## Step 5: Create your .dmg file
 
-* Create a Release Build: For an optimized build without debug information, go to Product > Scheme > Edit Scheme. Under the Run tab, set "Build Configuration" to Release, then build again.
-* Signing and Notarization: If you plan to share your app outside your Mac, signing and notarization are required. Go to Product > Archive, then use the Organizer window to distribute. You will need a free Apple Developer account for notarization.
-* Package as a DMG Installer: You can use Finder to create a disk image, or utilize tools like create-dmg via Homebrew for more advanced packaging.
+ * Create a Release Build: For an optimized build without debug information, go to Product > Scheme > Edit Scheme. Under the Run tab, set "Build Configuration" to Release, then build again.
+ * Signing and Notarization: If you plan to share your app outside your Mac, signing and notarization are required. Go to Product > Archive, then use the Organizer window to distribute. You will need a free Apple Developer account for notarization.
+ * Package as a DMG Installer: You can use Finder to create a disk image, or utilize tools like create-dmg via Homebrew for more advanced packaging.
 
 ```
 brew install create-dmg
@@ -81,3 +81,7 @@ create-dmg \
   ~/build/HelloWorld.dmg \
   ~/build/HelloWorld.app
 ```
+
+## Step 6: Distribution
+
+ * Upload into GitHub Releases
